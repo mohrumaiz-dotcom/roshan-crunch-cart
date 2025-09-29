@@ -2,41 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Roshan Grams Design System - Premium Food E-commerce */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Brand Colors - HSL format */
+    --background: 43 67% 97%; /* cream #FFF7E9 */
+    --foreground: 210 23% 6%; /* ink #0C0F14 */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 210 17% 8%; /* card #101417 */
+    --card-foreground: 43 67% 97%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 210 17% 8%;
+    --popover-foreground: 43 67% 97%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Classic Spice Theme */
+    --primary: 25 95% 43%; /* spice #D97706 */
+    --primary-foreground: 43 67% 97%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 158 64% 52%; /* mint #10B981 */
+    --secondary-foreground: 210 23% 6%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 17% 12%;
+    --muted-foreground: 43 30% 70%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 43 96% 56%; /* gold #F59E0B */
+    --accent-foreground: 210 23% 6%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%; /* rose #EF4444 */
+    --destructive-foreground: 43 67% 97%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 210 15% 15%;
+    --input: 210 17% 8%;
+    --ring: 25 95% 43%;
 
-    --radius: 0.5rem;
+    /* Custom Design Tokens */
+    --spice: 25 95% 43%;
+    --mint: 158 64% 52%;
+    --rose: 0 84% 60%;
+    --gold: 43 96% 56%;
+    --cream: 43 67% 97%;
+    --ink: 210 23% 6%;
+
+    /* Gradients */
+    --gradient-spice: linear-gradient(135deg, hsl(var(--spice)), hsl(var(--gold)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--card) / 0.8) 100%);
+    --gradient-glass: linear-gradient(135deg, hsl(var(--card) / 0.1), hsl(var(--card) / 0.05));
+
+    /* Shadows */
+    --shadow-glass: 0 8px 32px hsl(var(--ink) / 0.1);
+    --shadow-lift: 0 4px 20px hsl(var(--spice) / 0.15);
+    --shadow-glow: 0 0 30px hsl(var(--spice) / 0.2);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +122,84 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer components {
+  /* Glass Morphism Cards */
+  .glass-card {
+    @apply backdrop-blur-sm border border-white/10;
+    background: var(--gradient-glass);
+    box-shadow: var(--shadow-glass);
+  }
+
+  /* Hero Gradient Overlays */
+  .hero-overlay {
+    background: var(--gradient-hero);
+  }
+
+  /* Spice Gradient Buttons */
+  .btn-spice {
+    background: var(--gradient-spice);
+    box-shadow: var(--shadow-lift);
+    transition: var(--transition-smooth);
+  }
+
+  .btn-spice:hover {
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-2px);
+  }
+
+  /* Product Card Hover Effects */
+  .product-card {
+    transition: var(--transition-smooth);
+  }
+
+  .product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lift);
+  }
+
+  /* Animated Underlines */
+  .animated-underline {
+    @apply relative;
+  }
+
+  .animated-underline::after {
+    @apply content-[''] absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
+  }
+
+  .animated-underline:hover::after {
+    @apply w-full;
+  }
+
+  /* Spice Level Indicators */
+  .spice-dot {
+    @apply w-2 h-2 rounded-full;
+  }
+
+  .spice-mild {
+    @apply bg-secondary;
+  }
+
+  .spice-medium {
+    @apply bg-accent;
+  }
+
+  .spice-hot {
+    @apply bg-destructive;
+  }
+
+  /* Floating Action Button */
+  .fab {
+    @apply fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full shadow-lg;
+    background: var(--gradient-spice);
+    transition: var(--transition-bounce);
+  }
+
+  .fab:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-glow);
   }
 }
