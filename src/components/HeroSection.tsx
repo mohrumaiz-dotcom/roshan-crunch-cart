@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 import { MessageCircle, Flame, Leaf, Bike } from 'lucide-react';
-import heroImage from '@/assets/hero-mixtures.jpg';
+import heroImage from '@/assets/hero-green-mixtures.jpg';
 
 const HeroSection = () => {
   const trustBadges = [

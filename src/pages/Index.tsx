@@ -1,17 +1,37 @@
 import HeroSection from '@/components/HeroSection';
+import SecondaryHero from '@/components/SecondaryHero';
+import QuickOrderSection from '@/components/QuickOrderSection';
 import ProductCard from '@/components/ProductCard';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Gift, Star, Heart } from 'lucide-react';
+import { ArrowRight, Gift, Star, Heart, Truck, Shield, Clock, Award } from 'lucide-react';
 import { products, featuredProducts, categories } from '@/data/products';
 
 const Index = () => {
   return (
     <div className="space-y-20">
-      {/* Hero Section */}
+      {/* Main Hero Section */}
       <HeroSection />
+
+      {/* Quick Order Section */}
+      <QuickOrderSection />
+
+      {/* Secondary Hero - Quality Promise */}
+      <SecondaryHero
+        title="From Kitchen to Your Doorstep"
+        subtitle="Every batch is hand-roasted with premium ingredients, ensuring the perfect balance of flavor and freshness in every bite."
+        ctaText="Explore Our Story"
+        ctaLink="/about"
+        features={[
+          { icon: Award, title: "Premium Quality", description: "Hand-selected ingredients" },
+          { icon: Truck, title: "Fast Delivery", description: "Uber Flash available" },
+          { icon: Shield, title: "Freshness Guaranteed", description: "Made daily" },
+          { icon: Clock, title: "Quick Response", description: "WhatsApp support" }
+        ]}
+        variant="default"
+      />
 
       {/* Featured Categories */}
       <section className="container mx-auto px-4">
@@ -122,6 +142,21 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Third Hero - Testimonials Focus */}
+      <SecondaryHero
+        title="Loved by Thousands"
+        subtitle="Join our community of happy customers who trust Roshan Grams for authentic taste and uncompromising quality."
+        ctaText="Read Reviews"
+        ctaLink="/shop"
+        features={[
+          { icon: Star, title: "5000+", description: "Happy customers" },
+          { icon: Heart, title: "98%", description: "Satisfaction rate" },
+          { icon: Gift, title: "50+", description: "Product varieties" },
+          { icon: Truck, title: "Island-wide", description: "Delivery coverage" }
+        ]}
+        variant="centered"
+      />
 
       {/* Brand Story */}
       <section className="bg-card text-card-foreground py-20">

@@ -16,8 +16,8 @@
     --popover: 210 17% 8%;
     --popover-foreground: 43 67% 97%;
 
-    /* Classic Spice Theme */
-    --primary: 25 95% 43%; /* spice #D97706 */
+    /* Fresh Green Theme */
+    --primary: 142 71% 45%; /* forest green #22C55E */
     --primary-foreground: 43 67% 97%;
 
     --secondary: 158 64% 52%; /* mint #10B981 */
@@ -26,7 +26,7 @@
     --muted: 210 17% 12%;
     --muted-foreground: 43 30% 70%;
 
-    --accent: 43 96% 56%; /* gold #F59E0B */
+    --accent: 47 96% 56%; /* lime #84CC16 */
     --accent-foreground: 210 23% 6%;
 
     --destructive: 0 84% 60%; /* rose #EF4444 */
@@ -34,20 +34,20 @@
 
     --border: 210 15% 15%;
     --input: 210 17% 8%;
-    --ring: 25 95% 43%;
+    --ring: 142 71% 45%;
 
     /* Custom Design Tokens */
-    --spice: 25 95% 43%;
+    --spice: 142 71% 45%; /* now green */
     --mint: 158 64% 52%;
     --rose: 0 84% 60%;
-    --gold: 43 96% 56%;
+    --gold: 47 96% 56%; /* now lime */
     --cream: 43 67% 97%;
     --ink: 210 23% 6%;
 
     /* Gradients */
-    --gradient-spice: linear-gradient(135deg, hsl(var(--spice)), hsl(var(--gold)));
+    --gradient-spice: linear-gradient(135deg, hsl(var(--spice)), hsl(var(--mint)));
     --gradient-hero: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--card) / 0.8) 100%);
-    --gradient-glass: linear-gradient(135deg, hsl(var(--card) / 0.1), hsl(var(--card) / 0.05));
+    --gradient-glass: linear-gradient(135deg, hsl(var(--card) / 0.1), hsl(var(--card) / 0.05)));
 
     /* Shadows */
     --shadow-glass: 0 8px 32px hsl(var(--ink) / 0.1);
